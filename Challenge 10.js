@@ -195,6 +195,4 @@ a mensagem de erro será mostrada no console.
    showErroMessage(operationSignal);
  }
 
-
-
 })();
