@@ -20,7 +20,7 @@ var person = {name: 'Gleilton', Lastname: 'Oliveira', age: 32}
 Mostre no console, em um array, todas as propriedades do objeto acima.
 Não use nenhuma estrutura de repetição, nem crie o array manualmente.
 */
-var arry = Object.values(person);
+var arry = Object.keys(person);
 console.log( 'Propriedades de "person":'+ arry);
 
 /*
@@ -34,52 +34,44 @@ seguintes propriedades:
 `pages`: Number
 */
 
-            books = [
-                book01 = {nome:'O Pode da Ação', pages: 420},
-                book02 = {nome:'Java Como Programar', pages:600},
-                book03 = {nome:'O Poder do Habito', pages: 350}
-            ];
+           books.push({name:'O poder da ação', pages:400});
+           books.push({name:'JavaScript como programar', pages:500});
+           books.push({name:'O poder do Habíto', pages: 420});
+
+
 
 /*
 Mostre no console todos os livros.
 */
-for(var i = 0; i < books.length; i++){
-    console.log( '\nLista de livros:', books[i] );
-}
-
+console.log(books);
 
 console.log( '\nLivro que está sendo removido:', books.pop() );
 /*
 Remova o último livro, e mostre-o no console.
 */
-
-
-console.log( '\nAgora sobraram somente os livros:' );
+console.log( '\nAgora sobraram somente os livros:');
 /*
 Mostre no console os livros restantes.
 */
-console.log(books[0], '\n', books[1]);
+console.log(books);
 
 
 /*
 Converta os objetos que ficaram em `books` para strings.
 */
-
-console.log( '\nLivros em formato string:' + JSON.stringify(book01) + '\n' + JSON.stringify(book02));
-
+books = JSON.stringify( books );
+console.log( '\nLivros em formato string:' + books);
 /*
 Mostre os livros nesse formato no console:
 */
-
-var book011 = JSON.stringify(book01);
-var book022 =  JSON.stringify(book02);
-
+console.log(books);
 
 /*
 Converta os livros novamente para objeto.
 */
-// ?
-console.log( '\nAgora os livros são objetos novamente:' + JSON.parse(book011) + JSON.parse(book022) );
+//
+books = JSON.parse(books)
+console.log( '\nAgora os livros são objetos novamente:'+ books);
 
 /*
 Mostre no console todas as propriedades e valores de todos os livros,
@@ -87,12 +79,10 @@ no formato abaixo:
     "[PROPRIEDADE]: [VALOR]"
 */
 
-for(var i in book01){
-    console.log(i + " : " + book01[i]);  
-}
-
-for(var prop in book02){
-    console.log(prop + " : " + book01[prop]);
+for(var i = 0; i< books.length; i++){
+    for(var prop in books[i]){
+        console.log(prop + ' : ' + books[i][prop]);
+    }
     
 }
 
